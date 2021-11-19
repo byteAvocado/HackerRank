@@ -1,0 +1,35 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        int n = sc.nextInt();
+        while (n--> 0){
+            int num = sc.nextInt();
+            System.out.println(isPrime(num) ? "Prime" : "Not prime");
+        }
+    }
+    
+    static boolean isPrime(int num){
+        if (num == 1){
+            return false;
+        }
+        if (num == 2){
+            return true;
+        }
+        int divBy = 2;
+        int sqRoot = (int)Math.sqrt(num) + 1;
+        while (divBy <= sqRoot){
+            if (num % divBy == 0){
+                return false;
+            }
+            divBy++;
+        }
+        return true;
+    }
+}
